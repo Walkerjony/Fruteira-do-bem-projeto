@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('head'); %>
+</head>
+
+<body>
+  <%- include('navbar'); %>
+
+    <!--Conteudo-->
+    <div class="container mt-5 mb-5">
+      <div class="row justify-content-center">
+        <form action="/loginFruteira" method="POST" class="col-sm-10 col-md-8 col-lg-6 rounded shadow p-5">
+          <img src="imagens/logoDobem.png" class="logo my-0 mt-5" />
+          <h1 class="mb-5 mt-2 titleLoginU fw-bold">Seja bem-vindo(a)</h1>
+          <h3 class="mb-3 titleLoginU fw-bold">Entrar como fruteira</h3>
+          <% if(mensagem){%>
+            <div class="alert alert-danger" role="alert">
+              <%= mensagem %>
+            </div>
+            <br>
+          <%}%>
+          <div class="form-floating mb-3">
+            <input
+              name="email"
+              type="email"
+              id="txtEmail"
+              class="form-control rounded-pill"
+              placeholder=" "
+              autofocus
+              required
+            />
+            <label for="txtEmail" class="txtEmail">E-mail</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input
+              name="senha"
+              type="password"
+              id="txtSenha"
+              class="form-control rounded-pill"
+              placeholder=" "
+              required
+            />
+            <label for="txtSenha" class="txtSenha">Senha</label>
+          </div>
+
+          <button type="submit" class="btn btn-success px-5 py-3 rounded-pill">
+            Entrar
+          </button>
+
+          <p class="mt-3 spanOp">
+            Ainda não é cadastrado?
+            <a href="/cadastroFruteira">Clique aqui</a> para se cadastrar.
+          </p>
+          <p class="mt-3 text-success">
+            Deseja entrar como cliente?
+            <a href="/loginUsuario">Clique aqui</a> para acessar sua conta.
+          </p>
+        </form>
+      </div>
+    </div>
+    <!--ConteudoFim-->
+
+    <!--Footer-->
+    <footer class="shadow">
+      <%- include('footer'); %>
+    </footer>
+    <!--FooterFim-->
+
+</body>
+
+</html>

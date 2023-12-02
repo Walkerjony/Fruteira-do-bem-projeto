@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('head'); %>
+</head>
+
+<body>
+  <%- include('navbar'); %>
+    <!--Conteudo-->
+    <div class="container mt-5 mb-5">
+        <h1 class="titleCarrinho fw-bold">Carrinho de compras</h1>
+        <% if(mensagem){%>
+            <div class="alert alert-danger" role="alert">
+                <%=mensagem %>
+            </div>
+        <%} %>
+           
+        <ul class="list-group mb-3 shadow rounded"> 
+            
+            <% let valorTotal = 0; %>
+            <% produtosCarrinho.forEach(function(dados) { %>
+                <li class="list-group-item py-3 shadow">
+                    <div class="row g-3">
+                        <div class="col-4 col-md-3 col-lg-2">
+                            <img src="../imagens/<%=dados.imagem %>  " class="img-thumbnail">
+                            
+                        </div>
+                        <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
+                            <h4>
+                                <b class="text-decoration-none text-success">
+                                <%=dados.nomeProduto %>  </a></b>
+                            </h4>
+                            <h5 class="descProdutoC">
+                                <%=dados.descricao %>  
+                            </h5>
+                        </div>
+                        <div
+                            class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md-8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
+                            
+                            <div class="text-end mt-2">
+                                <a href="../excluiCarrinho/<%=dados.id %>" class="btn btn-danger btn-sm" type="button">
+                                    <i class="fas fa-trash"></i> 
+                                </a>
+                            </div>
+                            <div class="text-end mt-2">
+                                <span class="text-success fw-bold">Quantidade: x<%=dados.quantidade %></span>
+                            </div>
+                            <div class="text-end mt-2">
+                                <span class="text-success fw-bold">Preço:  <%= dados.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) %></span>
+                                <% valorTotal += (dados.quantidade * dados.preco); %>
+                                <% req.session.valorTotal = valorTotal;%>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                            
+                        
+                <% }); %>
+                
+
+            <li class="list-group-item py-3 shadow">
+                <div class="text-end">
+                    <h4 class="text-success mb-3 fw-bold">
+                        <span class="text-success fw-bold">Valor total do carrinho: <%= valorTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) %></span>
+                    </h4>
+                    <% if (idFruteira) { %>
+                        <a href="/produtos/<%=idFruteira %>" class="btn btn-outline-success px-4 py-2">
+                            Continuar comprando
+                        </a>
+                    <% } else { %>
+                        <a href="/fruteiras" class="btn btn-outline-success px-4 py-2">
+                            Continuar comprando
+                        </a>
+                    <% } %>
+                    
+                    <% if (!Array.isArray(produtosCarrinho) || produtosCarrinho.length === 0) { %>
+                        <a  class="btn ms-2 mt-xs-3 btnfecharCompra px-4 py-2">
+                            Fechar compra
+                        </a>
+                    <% } else { %>
+                        <a href="/fecharCompra" class="btn ms-2 mt-xs-3 btnfecharCompra px-4 py-2">
+                            Fechar compra
+                        </a>
+                    <% } %>
+                        
+                    
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--ConteudoFim-->
+
+    <!--Footer-->
+    <footer class="shadow">
+        <%- include('footer'); %>
+    </footer>
+    <!--FooterFim-->
+
+</body>
+
+</html>

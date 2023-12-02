@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('head'); %>
+</head>
+
+<body>
+  <%- include('navbar'); %>
+
+    <!--Conteudo-->
+    <div class="container mt-5 mb-5">
+      <div class="row justify-content-center">
+        <h1 class="titlePag fw-bold">Nome Fruteira</h1>
+        <div class="row gx-3">
+          <div class="col-4">
+            <div class="list-group">
+              <a
+                href="/perfilFruteira"
+                class="list-group-item list-group-item-action bg-success text-light"
+              >
+                Dados da Fruteira
+              </a>
+              <a
+                href="/editarDados"
+                class="list-group-item list-group-item-action text-success"
+              >
+                Editar Dados
+              </a>
+              <a
+                href="/anunciarProduto"
+                class="list-group-item list-group-item-action text-success"
+              >
+                Anunciar produto
+              </a>
+              <a
+                href="/produtosAnunciados"
+                class="list-group-item list-group-item-action text-success"
+              >
+                Produtos anunciados
+              </a>
+            </div>
+          </div>
+          <% if (fruteiraData) { %>
+
+          <div class="col-6 d-flex">
+            <img src=" imagens/<%= fruteiraData.logo %>" class="img-perfilCliente rounded" height="200px" width="200px"/>
+                <div class="ms-md-5">
+                  <p class="mb-3 titlePag fw-bold">Nome: <%= fruteiraData.nome %></p>
+                  <p class="mb-3 titlePag fw-bold">Email: <%= fruteiraData.email %></p>
+                  <p class="mb-3 titlePag fw-bold">Endereço: <%= fruteiraData.endereco %></p>
+                  <p class="mb-3 titlePag fw-bold">Estado: <%= fruteiraData.estado %></p>
+                  <p class="mb-3 titlePag fw-bold">Cidade: <%= fruteiraData.cidade %></p>
+                  <p class="mb-3 titlePag fw-bold">CNPJ: <%= fruteiraData.CNPJ %></p>
+                  <p class="mb-3 titlePag fw-bold">Instagram: <%= fruteiraData.instagram %></p>
+                  <p class="mb-3 titlePag fw-bold">Telefone: <%= fruteiraData.telefone %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } else { %>
+      <p>No fruteira data available.</p>
+  <% } %>
+    <!--ConteudoFim-->
+
+    <!--Footer-->
+    <footer class="shadow">
+      <%- include('footer'); %>
+    </footer>
+    <!--FooterFim-->
+
+</body>
+
+</html>

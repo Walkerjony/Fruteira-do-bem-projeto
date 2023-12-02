@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('head'); %>
+</head>
+
+<body>
+  <%- include('navbar'); %>
+
+    <!--Conteudo-->
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+        <h1 class="titlePag fw-bold">Minha Conta</h1>
+        <div class="row gx-3">
+            <div class="col-4">
+                <div class="list-group">
+                    <a href="/cliente" class="list-group-item list-group-item-action bg-success text-light">
+                        <i class="bi-person fs-6"></i> Dados Pessoais
+                    </a>
+
+                    <a href="/clientePedidos" class="list-group-item list-group-item-action text-success">
+                        <i class="bi-truck fs-6"></i> Pedidos Realizados
+                    </a>
+
+                    <a href="/editarDadosCliente" class="list-group-item list-group-item-action bg-success text-light">
+                        <i class="bi-person fs-6"></i> Editar Dados
+                    </a>
+                    
+
+                </div>
+            </div>
+            <% if (dados) { %>
+
+            <div class="col-6 d-flex">
+                <img src="imagens/<%= dados.imagem %>" class="img-perfilCliente rounded" height="200px" width="200px" />
+                <div class="ms-md-5">
+                <h5 class="mb-3 titlePag fw-bold">Nome: <%= dados.nome %></h5>
+                <h5 class="mb-3 titlePag fw-bold">E-mail: <%= dados.email %> </h5>
+                <h5 class="mb-3 titlePag fw-bold">Endereço: <%= dados.endereco %></h5>
+                <h5 class="mb-3 titlePag fw-bold">Estado: <%= dados.estado %></h5>
+                <h5 class="mb-3 titlePag fw-bold">Cidade: <%= dados.cidade %></h5>
+            
+            </div>
+            </div>
+        </div>
+        <% } else { %>
+            <p>Dados não encontrados.</p>
+        <% } %>
+    </div> 
+    </div> <br>
+    <!--ConteudoFim-->
+
+    <!--Footer-->
+    <footer class="shadow">
+      <%- include('footer'); %>
+    </footer>
+    <!--FooterFim-->
+
+</body>
+
+</html>

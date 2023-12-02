@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('head'); %>
+</head>
+
+<body>
+  <%- include('navbar'); %>
+    <% if (dadosCliente) { %>
+      <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <form action="/editarDadosCliente" enctype="multipart/form-data" method="POST"
+            class="col-sm-10 col-md-8 col-lg-6 rounded shadow p-5">
+            <img src="imagens/logoDobem.png" class="logo my-0 mt-5" />
+            <h1 class="mb-5 mt-2 titleLoginU fw-bold">Seu cadastro</h1>
+
+            <div class="form-floating mb-3">
+              <input type="text" value="<%=dadosCliente[0].nome %>" name="nome" id="txtNome"
+                class="form-control rounded-pill" placeholder=" " autofocus required />
+              <label for="txtNome" class="txtNome">Nome completo</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="email" value="<%=dadosCliente[0].email %>" name="email" id="txtEmail"
+                class="form-control rounded-pill" placeholder=" " autofocus required />
+              <label for="txtEmail" class="txtEmail">E-mail</label>
+            </div>
+
+
+            <div class="form-floating mb-3">
+              <input type="text" name="endereco" value="<%=dadosCliente[0].endereco %>" id="txtEndereco"
+                class="form-control rounded-pill" placeholder=" " autofocus required />
+              <label for="txtEndereco" class="txtNome">Endereço</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="file" name="imagem" id="imagem" class="form-control rounded-pill" placeholder="Logo"
+                autofocus required />
+            </div>
+
+            <button type="submit" class="btn btn-success px-5 py-3 rounded-pill">
+              Editar
+            </button>
+          </form>
+        </div>
+      </div>
+      </div>
+      <% } else { %>
+        <p>Dados não encontrados.</p>
+        <% } %>
+
+
+          <footer class="shadow">
+            <%- include('footer'); %>
+          </footer>
+          <!--FooterFim-->
+
+</body>
+
+</html>

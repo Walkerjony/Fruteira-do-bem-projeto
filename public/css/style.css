@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Quicksand&display=swap");
+
+
+:root {
+  --bg-color: rgb(255, 239, 147);
+  --text-orange: rgb(216, 143, 8);
+  --strong-orange: rgb(240, 159, 9);
+
+}
+html {
+  height: 100%;
+  min-height: 100%;
+  
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: var(--bg-color) !important;
+}
+
+/* NAVBAR E FOOTER*/
+.navbar {
+  height: auto;
+  background-color: rgb(238, 205, 20);
+}
+
+.logo {
+  width: 80px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(216, 143, 8);
+}
+
+.nav-link:hover {
+  color: rgb(226, 153, 17);
+}
+
+.logoFooter {
+  width: 100px;
+}
+
+footer {
+  margin-top: auto;
+  border-top: 1px solid rgb(189, 189, 189);
+  background-color: rgb(230, 230, 230);
+  height: auto;
+}
+
+/* PÁGINA INICIAL */
+#contQS {
+  margin-top: 100px;
+  height: 500px;
+  width: 100%;
+}
+
+#contCF {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.tituloQ {
+  margin-top: 100px;
+  color: rgb(216, 143, 8);
+  font-size: 54px;
+}
+
+#imgQS {
+  width: 500px;
+  height: 450px;
+}
+
+/* LOGIN E CADASTRO DO USUARIO E FRUTEIRA */
+.titleLoginU {
+  color: var(--text-orange);
+}
+
+.spanOp {
+  color: var(--text-orange);
+}
+
+.form-control {
+  
+    background-color: var(--text-orange);
+    border: none !important;
+}
+
+.txtEmail {
+  color: white;
+}
+
+.txtSenha {
+  color: white;
+}
+
+.txtNome {
+  color: white;
+}
+
+.txtEndereco {
+  color: white;
+}
+
+/* CARRINHO */
+.titleCarrinho {
+  color: var(--text-orange);
+}
+
+.btnfecharCompra {
+  color: white;
+  background-color: var(--text-orange);
+}
+
+.btnfecharCompra:hover {
+  color: white;
+  background-color: rgb(230, 155, 16);
+}
+
+.list-group-item {
+  background-color: var(--bg-color);
+  border: none;
+}
+
+.descProdutoC {
+  color: var(--text-orange);
+}
+
+/* FECHAMENTO ENDEREÇO */
+.titleEnd {
+  color: var(--text-orange);
+}
+
+/* PAGAMENTO */
+
+.titlePag {
+  color: var(--text-orange);
+}
+
+/* PRODUTOS */
+.card {
+  background-color: var(--bg-color) !important;
+}
+
+.card-title {
+  color: var(--text-orange);
+}
+
+.card-text {
+  color: var(--text-orange);
+}
+
+.imgFruteira {
+  width: 200px;
+}
+
+.nomeFruteira {
+  color: var(--text-orange);
+}
+
+.page-link {
+  border: 1px solid orange !important;
+  background-color: var(--text-orange);
+  color: white;
+}
+
+.page-link:hover {
+  background-color: orange;
+  color: white;
+}
+
+#formPFruteira {
+  height: 150px !important;
+}
+
+.btnContinuar {
+  color: white;
+  background-color: var(--text-orange);
+
+}
+.btnContinuar:hover {
+  color: white;
+  background-color: rgb(230, 155, 16);
+}
+
+/* PEDIDOS REALIZADOS */
+
+.accordion-item {
+  background-color: var(--bg-color);
+  border: 1px solid var(--text-orange) !important;
+}
+
+.accordion-button {
+  background-color: var(--bg-color);
+}
+
+.accordion-body table{
+  border-bottom: 1px solid var(--text-orange) !important;
+}
+
+
+.img-perfilCliente {
+  width: 200px;
+}
+
+th {
+  border: 1px solid var(--text-orange) !important;
+}
+
+td {
+  border: 1px solid var(--text-orange) !important;
+}
+@media (max-width: 920px) {
+  #imgQS {
+    display: none;
+  }
+}

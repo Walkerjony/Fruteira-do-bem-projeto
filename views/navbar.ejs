@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-sm shadow">
+    <div class="container">
+        <a href="/" class="navbar-brand"><img src="../imagens/logoDobem.png" class="logo my-0" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="div-collapse navbar-collapse" id="menuNavbar">
+            <div class="navbar-nav ms-auto">
+                <% if (dadosUsuario) { %>
+                    <a href="/" class="nav-link mx-3">Página Inicial</a>
+                    <a href="/comofunciona" class="nav-link mx-3">Como funciona</a>
+                    <a href="/fruteiras" class="nav-link me-3">Encontrar fruteiras</a>
+                    <a href="/carrinho" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path
+                          d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                      </svg></a>
+                    <a href="/cliente" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        <path fill-rule="evenodd"
+                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                      </svg></a>
+                    <a href="/logout" class="nav-link">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-escape"
+                        viewBox="0 0 16 16">
+                        <path d="M8.538 1.02a.5.5 0 1 0-.076.998 6 6 0 1 1-6.445 6.444.5.5 0 0 0-.997.076A7 7 0 1 0 8.538 1.02Z" />
+                        <path
+                          d="M7.096 7.828a.5.5 0 0 0 .707-.707L2.707 2.025h2.768a.5.5 0 1 0 0-1H1.5a.5.5 0 0 0-.5.5V5.5a.5.5 0 0 0 1 0V2.732l5.096 5.096Z" />
+                      </svg>
+                    </a>
+                    <% } else if (dadosFruteira) { %>
+                        <a href="/" class="nav-link mx-3">Página Inicial</a>
+                        <a href="/comofunciona" class="nav-link mx-3">Como funciona</a>
+                        <a href="/perfilFruteira" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg></a>
+                        <a href="/logout" class="nav-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                class="bi bi-escape" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.538 1.02a.5.5 0 1 0-.076.998 6 6 0 1 1-6.445 6.444.5.5 0 0 0-.997.076A7 7 0 1 0 8.538 1.02Z" />
+                                <path
+                                    d="M7.096 7.828a.5.5 0 0 0 .707-.707L2.707 2.025h2.768a.5.5 0 1 0 0-1H1.5a.5.5 0 0 0-.5.5V5.5a.5.5 0 0 0 1 0V2.732l5.096 5.096Z" />
+                            </svg>
+                        </a>
+                    <% } else { %>
+                    <a href="/" class="nav-link mx-3">Página Inicial</a>
+                    <a href="/comofunciona" class="nav-link mx-3">Como funciona</a>
+                    <a href="/fruteiras" class="nav-link me-3">Fruteiras</a>
+                    <a href="/loginUsuario" class="nav-link mx-3">Entrar</a>
+                    <a href="/cadastroUsuario" class="nav-link mx-3">Cadastrar</a>
+                  <% } %>
+                
+            </div>
+        </div>
+    </div>
+</nav>

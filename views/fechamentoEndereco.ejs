@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('head'); %>
+</head>
+
+<body>
+  <%- include('navbar'); %>
+
+    <!--Conteudo-->
+    <div class="container mt-5 mb-5">
+      <h1 class="titleEnd fw-bold text-center">Entrega</h1>
+      <h4 class="mb-4 text-success text-center">
+        Como será a retirada do seu pedido?
+      </h4>
+      <div class="d-flex justify-content-center flex-wrap pt-4 px-3">
+        <% if (dados) { %>
+          <form method="post" action="../addEntrega">
+            <div class="mb-4 flex-even mx-3">
+              <input type="radio" class="btn-check" name="endereco" value="<%= dados.endereco %>" autocomplete="off" id="end1">
+              <label class="btn btn-outline-success p-4 h-100 w-100" for="end1">
+                <h3>
+                  <b class="" style="color: var(--text-orange)">Meu endereço</b><br>
+
+                </h3>
+                <hr class="mt-3">
+                <h4>
+                  <%= dados.endereco %>
+                </h4>
+              </label>
+            </div>
+            <div class="mb-4  flex-even mx-3">
+              <input type="radio" class="btn-check" name="endereco" value="Retirar nas fruteiras" autocomplete="off" id="end2">
+              <label class="btn btn-outline-success p-4 h-100 w-100" for="end2">
+                <h3>
+                  <b class="" style="color: var(--text-orange)">Retirar na fruteira informando seu nome</b><br>
+                  <hr>
+                </h3>
+                <h4>
+                  <%= dados.nome %>
+                </h4>
+              </label>
+            </div>
+            </div>
+            <div class="text-center  p-4 pb-0">
+              <a href="/carrinho" class="btn btn-success mb-4">
+                Voltar ao carrinho
+              </a>
+              <button type="submit"class="btn ms-2 mb-4 btnContinuar">
+                Continuar
+              </button>
+               
+            </div>
+            
+          </form>
+
+      <% } else { %>
+        <p>Dados não encontrados.</p>
+        <% } %>
+
+          
+    </div>
+    <!--ConteudoFim-->
+    <footer class="shadow">
+      <%- include('footer'); %>
+    </footer>
+    <!--FooterFim-->
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('head'); %>
+</head>
+
+<body>
+  <%- include('navbar'); %>
+
+    <!--Conteudo-->
+    <div class="container mt-5 mb-5">
+      <div class="row justify-content-center">
+        <h1 class="titlePag fw-bold">Nome Fruteira</h1>
+        <div class="row gx-3">
+          <div class="col-4">
+            <div class="list-group">
+              <a
+                href="/perfilFruteira"
+                class="list-group-item list-group-item-action  text-success "
+              >
+                Dados da Fruteira
+              </a>
+              <a
+                href="/editarDados"
+                class="list-group-item list-group-item-action text-success"
+              >
+                Editar Dados
+              </a>
+              <a
+                href="/anunciarProduto"
+                class="list-group-item list-group-item-action bg-success text-light"
+              >
+                 Anunciar produto
+              </a>
+              <a
+                href="/produtosAnunciados"
+                class="list-group-item list-group-item-action text-success"
+              >
+                Produtos anunciados
+              </a>
+            </div>
+          </div>
+          <div class="col-6">
+            <% products.forEach(function(produto) { %>
+            <form action="/editarProduto/<%=produto.id%>" method="POST" enctype="multipart/form-data" class="ps-3">
+                <h4 class="mb-3 titleLoginU fw-bold">Editar produto</h4>
+    
+                <div class="form-floating mb-3">
+                    <input
+                      value="<%=produto.nomeProduto%>"
+                      name="nomeProduto"
+                      type="text"
+                      id="nomeProduto"
+                      class="form-control rounded-pill"
+                      placeholder=" "
+                      autofocus
+                      required
+                    />
+                    <label for="txtNome" class="txtNome">Nome do Produto</label>
+                  </div>
+      
+                  <div class="form-floating mb-3">
+                    <input
+                    value="<%=produto.preco%>"
+                      name="preco"
+                      type="text"
+                      id="preco"
+                      class="form-control rounded-pill"
+                      placeholder=" "
+                      autofocus
+                      required
+                    />
+                    <label for="txtNome" class="txtNome">Preço</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input
+                      value="<%=produto.descricao%>"
+                      name="descricao"
+                      type="text"
+                      id="descricao"
+                      class="form-control rounded-pill"
+                      placeholder=" "
+                      autofocus
+                      required
+                    />
+                    <label for="descricao" class="txtNome">Descrição:</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input
+                      name="imagem"
+                      type="file"
+                      id="imagem"
+                      class="form-control rounded-pill"
+                      placeholder=" "
+                      autofocus
+                      required
+                    />
+                    
+                  </div>
+                <button
+                  type="submit"
+                  class="btn btn-success px-5 py-3 rounded-pill"
+                >
+                  Anunciar produto
+                </button>
+              </form>
+              <% }); %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--ConteudoFim-->
+
+    <!--Footer-->
+    <footer class="shadow">
+      <%- include('footer'); %>
+    </footer>
+    <!--FooterFim-->
+
+</body>
+
+</html>
