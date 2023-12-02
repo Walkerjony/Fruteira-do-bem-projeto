@@ -11,7 +11,13 @@
 > Projeto voltado para o reaproveitamento de alimentos perecíveis.
 > Acesse a aplicação:  https://academico.gravatai.ifsul.edu.br/usuario26/
 
-### Ajustes e melhorias
+### Funcionalidades
+
+> Cadastro de Lojas voltadas para o reaproveitamento de alimentos
+> Utilização da IBGE API para localização de fruteiras
+> Compra de alimentos e sistema de carrinhod de compras
+> Edição de Dados e informações
+> Procura de fruteiras e lojas baseadas em localização
 
 
 
@@ -20,8 +26,6 @@
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 - Você instalou a versão mais recente de `<NodeJS>`
-
-## 🚀 Instalando Fruteira do Bem
 
 
 ## ☕ Usando a aplicação
@@ -33,6 +37,6 @@ Clone o repositório: git clone https://github.com/Walkerjony/Fruteira-do-bem-pr
 
 Instale as dependências do projeto: npm i
 
-Inicie o servidor da aplicaçãp: node ./src/servidor.js
+Inicie o servidor da aplicação: node ./src/servidor.js
 
 ```
