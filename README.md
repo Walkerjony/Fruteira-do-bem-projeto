@@ -12,13 +12,13 @@
 > Acesse a aplicação:  https://academico.gravatai.ifsul.edu.br/usuario26/
 
 ### Funcionalidades
-
-> Cadastro de Lojas voltadas para o reaproveitamento de alimentos
-> Utilização da IBGE API para localização de fruteiras
-> Compra de alimentos e sistema de carrinhod de compras
-> Edição de Dados e informações
-> Procura de fruteiras e lojas baseadas em localização
-
+```
+Cadastro de Lojas voltadas para o reaproveitamento de alimentos
+Utilização da IBGE API para localização de fruteiras
+Compra de alimentos e sistema de carrinhod de compras
+Edição de Dados e informações
+Procura de fruteiras e lojas baseadas em localização
+```
 
 
 ## 💻 Pré-requisitos
